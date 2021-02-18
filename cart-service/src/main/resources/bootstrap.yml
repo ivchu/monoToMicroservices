@@ -1,0 +1,12 @@
+# Read file on Config-Server:
+# app-about-company.properties or app-about-company.yml
+#spring:
+#  application:
+#    name: cart-service
+#  # This is the default:
+#  cloud:
+#    config:
+#      uri: http://localhost:9001
+#management:
+#  security:
+#    enabled: false

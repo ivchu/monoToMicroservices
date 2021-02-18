@@ -1,0 +1,45 @@
+server:
+  port: 8082
+
+eureka:
+  instance:
+    appname: cart-serivce
+  client:
+    healthcheck:
+      enabled: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+
+spring:
+  application:
+    name: cart-service
+  datasource:
+    url: jdbc:mysql://localhost:3307/cart-service?useSSL=false&allowPublicKeyRetrieval=true
+    driver: com.mysql.jdbc.Driver
+    username: root
+    password: root
+  jpa:
+    properties:
+      hibernate:
+        connection:
+          charSet: UTF-8
+        hbm2ddl:
+          import_files_sql_extractor: org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor
+      #      show_sql: false
+      show-sql: true
+      cache:
+        use_query_cache: false
+        use_second_level_cache: false
+  http:
+    multipart:
+      max-file-size: 1500KB
+      max-request-size: 1500KB
+jwt:
+  header: Authentication
+  expires_in: 86400
+  secret: sgd34bwfAbfSBPpe0r8gwbg
+  #jwt.cookie = AUTH-TOKEN
+
+security:
+    ignored: /**
