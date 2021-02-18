@@ -1,0 +1,14 @@
+spring:
+  profiles: default
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: mentoring-eureka-server.com
+  client:
+    healthcheck:
+      enabled: true
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

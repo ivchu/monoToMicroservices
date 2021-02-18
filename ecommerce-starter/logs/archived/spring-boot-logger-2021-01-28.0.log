@@ -1,0 +1,913 @@
+2021-01-28 20:01:38,743 INFO org.springframework.boot.StartupInfoLogger [main] Starting EcommerceStarterApplication on EPRUPETW07C6 with PID 65052 (/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes started by ivan_chuvakhin in /Users/ivan_chuvakhin/Documents/epam/study/monoToMicro)
+2021-01-28 20:01:38,746 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:01:38,801 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@397fbdb: startup date [Thu Jan 28 20:01:38 MSK 2021]; root of context hierarchy
+2021-01-28 20:01:39,116 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:01:40,154 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a51acab3] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:01:40,491 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8081 (http)
+2021-01-28 20:01:40,511 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8081"]
+2021-01-28 20:01:40,528 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:01:40,528 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:01:40,644 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:01:40,645 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1844 ms
+2021-01-28 20:01:40,936 ERROR org.springframework.boot.context.embedded.tomcat.TomcatStarter [localhost-startStop-1] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'authenticationSuccessHandler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+2021-01-28 20:01:40,962 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2021-01-28 20:01:40,976 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+2021-01-28 20:01:40,984 INFO org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer [main] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2021-01-28 20:01:40,990 ERROR org.springframework.boot.SpringApplication [main] Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:138)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:536)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:123)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:666)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1082)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1071)
+	at com.epam.mentoring.EcommerceStarterApplication.main(EcommerceStarterApplication.java:22)
+Caused by: org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.initialize(TomcatEmbeddedServletContainer.java:135)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.<init>(TomcatEmbeddedServletContainer.java:87)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory.getTomcatEmbeddedServletContainer(TomcatEmbeddedServletContainerFactory.java:535)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory.getEmbeddedServletContainer(TomcatEmbeddedServletContainerFactory.java:177)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:135)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'authenticationSuccessHandler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:160)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:145)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:78)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getServletContextInitializerBeans(EmbeddedWebApplicationContext.java:240)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.selfInitialize(EmbeddedWebApplicationContext.java:214)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.access$000(EmbeddedWebApplicationContext.java:91)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext$1.onStartup(EmbeddedWebApplicationContext.java:205)
+	at org.springframework.boot.context.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1412)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1402)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:211)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:211)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 49 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:846)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1079)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	... 60 common frames omitted
+2021-01-28 20:02:10,496 INFO org.springframework.boot.StartupInfoLogger [main] Starting EcommerceStarterApplication on EPRUPETW07C6 with PID 65189 (/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes started by ivan_chuvakhin in /Users/ivan_chuvakhin/Documents/epam/study/monoToMicro)
+2021-01-28 20:02:10,501 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:02:10,570 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@33d512c1: startup date [Thu Jan 28 20:02:10 MSK 2021]; root of context hierarchy
+2021-01-28 20:02:11,315 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:02:13,246 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$7dfeb1e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:02:13,813 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:02:13,836 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:02:13,860 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:02:13,861 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:02:14,035 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:02:14,035 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 3466 ms
+2021-01-28 20:02:14,457 ERROR org.springframework.boot.context.embedded.tomcat.TomcatStarter [localhost-startStop-1] Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'authenticationSuccessHandler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+2021-01-28 20:02:14,483 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2021-01-28 20:02:14,497 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+2021-01-28 20:02:14,505 INFO org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer [main] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2021-01-28 20:02:14,511 ERROR org.springframework.boot.SpringApplication [main] Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:138)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:536)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:123)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:666)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1082)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1071)
+	at com.epam.mentoring.EcommerceStarterApplication.main(EcommerceStarterApplication.java:22)
+Caused by: org.springframework.boot.context.embedded.EmbeddedServletContainerException: Unable to start embedded Tomcat
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.initialize(TomcatEmbeddedServletContainer.java:135)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer.<init>(TomcatEmbeddedServletContainer.java:87)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory.getTomcatEmbeddedServletContainer(TomcatEmbeddedServletContainerFactory.java:535)
+	at org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory.getEmbeddedServletContainer(TomcatEmbeddedServletContainerFactory.java:177)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:135)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'webSecurityConfig': Unsatisfied dependency expressed through field 'authenticationSuccessHandler'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1072)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:511)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:165)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:160)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:145)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:78)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getServletContextInitializerBeans(EmbeddedWebApplicationContext.java:240)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.selfInitialize(EmbeddedWebApplicationContext.java:214)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.access$000(EmbeddedWebApplicationContext.java:91)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext$1.onStartup(EmbeddedWebApplicationContext.java:205)
+	at org.springframework.boot.context.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5154)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1412)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1402)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationSuccessHandler': Unsatisfied dependency expressed through field 'tokenHelper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:211)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 36 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'tokenHelper': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:211)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 49 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'app.name' in value "${app.name}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:846)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1079)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	... 60 common frames omitted
+2021-01-28 20:04:04,133 INFO org.springframework.boot.StartupInfoLogger [main] Starting EcommerceStarterApplication on EPRUPETW07C6 with PID 65655 (/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes started by ivan_chuvakhin in /Users/ivan_chuvakhin/Documents/epam/study/monoToMicro)
+2021-01-28 20:04:04,135 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:04:04,171 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:04:04 MSK 2021]; root of context hierarchy
+2021-01-28 20:04:04,468 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:04:05,441 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a57bee3b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:04:05,772 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:04:05,786 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:04:05,797 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:04:05,798 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:04:05,896 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:04:05,897 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1726 ms
+2021-01-28 20:04:06,787 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executing SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql]
+2021-01-28 20:04:07,389 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executed SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql] in 601 ms.
+2021-01-28 20:04:07,560 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [localhost-startStop-1] Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:04:07,576 INFO org.hibernate.jpa.internal.util.LogHelper [localhost-startStop-1] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-28 20:04:07,638 INFO org.hibernate.Version [localhost-startStop-1] HHH000412: Hibernate Core {5.0.12.Final}
+2021-01-28 20:04:07,640 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000206: hibernate.properties not found
+2021-01-28 20:04:07,642 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000021: Bytecode provider name : javassist
+2021-01-28 20:04:07,675 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [localhost-startStop-1] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2021-01-28 20:04:07,773 INFO org.hibernate.dialect.Dialect [localhost-startStop-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-28 20:04:08,260 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [localhost-startStop-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:04:08,613 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-28 20:04:08,614 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-28 20:04:08,614 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-28 20:04:08,614 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-28 20:04:08,616 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2021-01-28 20:04:08,616 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2021-01-28 20:04:08,616 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-28 20:04:09,141 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[GET]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.view(long)
+2021-01-28 20:04:09,142 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.edit(long,com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:04:09,143 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductGroup> com.epam.mentoring.controllers.GroupController.index()
+2021-01-28 20:04:09,144 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.create(com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:04:09,145 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.view(long)
+2021-01-28 20:04:09,146 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.edit(long,com.epam.mentoring.models.Order)
+2021-01-28 20:04:09,146 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Order> com.epam.mentoring.controllers.OrderController.index()
+2021-01-28 20:04:09,147 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.create(com.epam.mentoring.models.Order)
+2021-01-28 20:04:09,148 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}/place],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.createOrder(java.lang.String,com.epam.mentoring.models.Order)
+2021-01-28 20:04:09,150 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[GET]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.view(long)
+2021-01-28 20:04:09,151 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.edit(long,com.epam.mentoring.models.Product)
+2021-01-28 20:04:09,151 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Product> com.epam.mentoring.controllers.ProductController.index()
+2021-01-28 20:04:09,152 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.create(com.epam.mentoring.models.Product)
+2021-01-28 20:04:09,152 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/images],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductImage> com.epam.mentoring.controllers.ProductController.viewImages(java.lang.String)
+2021-01-28 20:04:09,153 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/image/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.core.io.Resource> com.epam.mentoring.controllers.ProductController.serveFile(java.lang.String)
+2021-01-28 20:04:09,153 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/uploadimage],methods=[POST]}" onto public java.lang.String com.epam.mentoring.controllers.ProductController.handleFileUpload(java.lang.String,org.springframework.web.multipart.MultipartFile)
+2021-01-28 20:04:09,156 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2021-01-28 20:04:09,157 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2021-01-28 20:04:09,158 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2021-01-28 20:04:09,160 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-01-28 20:04:09,161 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-28 20:04:09,291 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-01-28 20:04:09,608 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@526a9908, org.springframework.security.web.context.SecurityContextPersistenceFilter@7301eebe, org.springframework.security.web.header.HeaderWriterFilter@8cc8cdb, org.springframework.security.web.authentication.logout.LogoutFilter@2ddb3ae8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@795f8317, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7be1ce6a, com.epam.mentoring.security.TokenAuthenticationFilter@4d51f778, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d6ccc97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a901445, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3166f664, org.springframework.security.web.session.SessionManagementFilter@44fff386, org.springframework.security.web.access.ExceptionTranslationFilter@d2291de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a500561]
+2021-01-28 20:04:09,709 INFO org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:04:04 MSK 2021]; root of context hierarchy
+2021-01-28 20:04:09,757 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:04:09,757 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:04:09,789 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:04:10,099 INFO org.springframework.jmx.export.MBeanExporter [main] Registering beans for JMX exposure on startup
+2021-01-28 20:04:10,109 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [main] Starting beans in phase 2147483647
+2021-01-28 20:04:10,109 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-01-28 20:04:10,128 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-01-28 20:04:10,196 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-01-28 20:04:10,332 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_1
+2021-01-28 20:04:10,346 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_1
+2021-01-28 20:04:10,352 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_1
+2021-01-28 20:04:10,357 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_1
+2021-01-28 20:04:10,388 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_2
+2021-01-28 20:04:10,393 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_2
+2021-01-28 20:04:10,403 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_2
+2021-01-28 20:04:10,430 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_2
+2021-01-28 20:04:10,451 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:04:10,469 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2021-01-28 20:04:10,480 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat started on port(s): 8080 (http)
+2021-01-28 20:04:10,488 INFO org.springframework.boot.StartupInfoLogger [main] Started EcommerceStarterApplication in 6.715 seconds (JVM running for 7.294)
+2021-01-28 20:05:37,296 INFO org.springframework.context.support.AbstractApplicationContext [Thread-4] Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:04:04 MSK 2021]; root of context hierarchy
+2021-01-28 20:05:37,298 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [Thread-4] Stopping beans in phase 2147483647
+2021-01-28 20:05:37,300 INFO org.springframework.jmx.export.MBeanExporter [Thread-4] Unregistering JMX-exposed beans on shutdown
+2021-01-28 20:05:37,311 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-4] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:05:40,693 INFO org.springframework.boot.StartupInfoLogger [main] Starting EcommerceStarterApplication on EPRUPETW07C6 with PID 65679 (/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes started by ivan_chuvakhin in /Users/ivan_chuvakhin/Documents/epam/study/monoToMicro)
+2021-01-28 20:05:40,695 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:05:40,736 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:05:40 MSK 2021]; root of context hierarchy
+2021-01-28 20:05:41,053 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:05:42,029 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a57bee3b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:05:42,341 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:05:42,359 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:05:42,377 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:05:42,377 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:05:42,487 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:05:42,487 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1751 ms
+2021-01-28 20:05:43,348 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executing SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql]
+2021-01-28 20:05:44,011 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executed SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql] in 663 ms.
+2021-01-28 20:05:44,191 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [localhost-startStop-1] Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:05:44,204 INFO org.hibernate.jpa.internal.util.LogHelper [localhost-startStop-1] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-28 20:05:44,259 INFO org.hibernate.Version [localhost-startStop-1] HHH000412: Hibernate Core {5.0.12.Final}
+2021-01-28 20:05:44,262 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000206: hibernate.properties not found
+2021-01-28 20:05:44,263 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000021: Bytecode provider name : javassist
+2021-01-28 20:05:44,293 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [localhost-startStop-1] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2021-01-28 20:05:44,385 INFO org.hibernate.dialect.Dialect [localhost-startStop-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-28 20:05:44,775 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [localhost-startStop-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:05:44,985 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-28 20:05:44,985 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-28 20:05:44,986 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-28 20:05:44,986 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-28 20:05:44,987 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2021-01-28 20:05:44,988 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2021-01-28 20:05:44,988 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-28 20:05:45,409 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[GET]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.view(long)
+2021-01-28 20:05:45,410 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.edit(long,com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:05:45,411 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductGroup> com.epam.mentoring.controllers.GroupController.index()
+2021-01-28 20:05:45,411 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.create(com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:05:45,412 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.view(long)
+2021-01-28 20:05:45,413 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}/place],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.createOrder(java.lang.String,com.epam.mentoring.models.Order)
+2021-01-28 20:05:45,413 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.edit(long,com.epam.mentoring.models.Order)
+2021-01-28 20:05:45,414 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Order> com.epam.mentoring.controllers.OrderController.index()
+2021-01-28 20:05:45,414 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.create(com.epam.mentoring.models.Order)
+2021-01-28 20:05:45,415 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[GET]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.view(long)
+2021-01-28 20:05:45,416 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/images],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductImage> com.epam.mentoring.controllers.ProductController.viewImages(java.lang.String)
+2021-01-28 20:05:45,416 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/image/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.core.io.Resource> com.epam.mentoring.controllers.ProductController.serveFile(java.lang.String)
+2021-01-28 20:05:45,417 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/uploadimage],methods=[POST]}" onto public java.lang.String com.epam.mentoring.controllers.ProductController.handleFileUpload(java.lang.String,org.springframework.web.multipart.MultipartFile)
+2021-01-28 20:05:45,417 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.edit(long,com.epam.mentoring.models.Product)
+2021-01-28 20:05:45,418 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Product> com.epam.mentoring.controllers.ProductController.index()
+2021-01-28 20:05:45,418 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.create(com.epam.mentoring.models.Product)
+2021-01-28 20:05:45,420 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2021-01-28 20:05:45,421 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2021-01-28 20:05:45,421 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2021-01-28 20:05:45,424 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-28 20:05:45,424 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-01-28 20:05:45,517 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-01-28 20:05:45,783 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@526a9908, org.springframework.security.web.context.SecurityContextPersistenceFilter@7301eebe, org.springframework.security.web.header.HeaderWriterFilter@8cc8cdb, org.springframework.security.web.authentication.logout.LogoutFilter@2ddb3ae8, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@795f8317, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7be1ce6a, com.epam.mentoring.security.TokenAuthenticationFilter@427994e4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4d6ccc97, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a901445, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3166f664, org.springframework.security.web.session.SessionManagementFilter@44fff386, org.springframework.security.web.access.ExceptionTranslationFilter@d2291de, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a500561]
+2021-01-28 20:05:45,865 INFO org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:05:40 MSK 2021]; root of context hierarchy
+2021-01-28 20:05:45,915 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:05:45,915 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:05:45,948 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:05:46,195 INFO org.springframework.jmx.export.MBeanExporter [main] Registering beans for JMX exposure on startup
+2021-01-28 20:05:46,202 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [main] Starting beans in phase 2147483647
+2021-01-28 20:05:46,203 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-01-28 20:05:46,225 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-01-28 20:05:46,340 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-01-28 20:05:46,603 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_1
+2021-01-28 20:05:46,620 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_1
+2021-01-28 20:05:46,628 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_1
+2021-01-28 20:05:46,637 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_1
+2021-01-28 20:05:46,667 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_2
+2021-01-28 20:05:46,674 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_2
+2021-01-28 20:05:46,684 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_2
+2021-01-28 20:05:46,712 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_2
+2021-01-28 20:05:46,736 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:05:46,756 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2021-01-28 20:05:46,768 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat started on port(s): 8080 (http)
+2021-01-28 20:05:46,777 INFO org.springframework.boot.StartupInfoLogger [main] Started EcommerceStarterApplication in 6.446 seconds (JVM running for 7.054)
+2021-01-28 20:05:57,786 INFO org.springframework.context.support.AbstractApplicationContext [Thread-4] Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:05:40 MSK 2021]; root of context hierarchy
+2021-01-28 20:05:57,788 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [Thread-4] Stopping beans in phase 2147483647
+2021-01-28 20:05:57,859 INFO org.springframework.jmx.export.MBeanExporter [Thread-4] Unregistering JMX-exposed beans on shutdown
+2021-01-28 20:05:57,865 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-4] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:06:02,438 INFO org.springframework.boot.StartupInfoLogger [main] Starting EcommerceStarterApplication on EPRUPETW07C6 with PID 65697 (/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes started by ivan_chuvakhin in /Users/ivan_chuvakhin/Documents/epam/study/monoToMicro)
+2021-01-28 20:06:02,441 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:06:02,487 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:06:02 MSK 2021]; root of context hierarchy
+2021-01-28 20:06:02,769 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:06:03,708 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ba36bfff] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:06:04,003 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:06:04,016 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:06:04,030 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:06:04,030 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:06:04,132 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:06:04,133 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1646 ms
+2021-01-28 20:06:04,991 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executing SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql]
+2021-01-28 20:06:05,739 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executed SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql] in 747 ms.
+2021-01-28 20:06:05,899 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [localhost-startStop-1] Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:06:05,911 INFO org.hibernate.jpa.internal.util.LogHelper [localhost-startStop-1] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-28 20:06:05,965 INFO org.hibernate.Version [localhost-startStop-1] HHH000412: Hibernate Core {5.0.12.Final}
+2021-01-28 20:06:05,967 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000206: hibernate.properties not found
+2021-01-28 20:06:05,968 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000021: Bytecode provider name : javassist
+2021-01-28 20:06:05,998 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [localhost-startStop-1] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2021-01-28 20:06:06,093 INFO org.hibernate.dialect.Dialect [localhost-startStop-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-28 20:06:06,566 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [localhost-startStop-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:06:06,826 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-28 20:06:06,827 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-28 20:06:06,827 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-28 20:06:06,827 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-28 20:06:06,828 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2021-01-28 20:06:06,828 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2021-01-28 20:06:06,828 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-28 20:06:07,289 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.edit(long,com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:06:07,290 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[GET]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.view(long)
+2021-01-28 20:06:07,291 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductGroup> com.epam.mentoring.controllers.GroupController.index()
+2021-01-28 20:06:07,292 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.create(com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:06:07,293 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.edit(long,com.epam.mentoring.models.Order)
+2021-01-28 20:06:07,294 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.view(long)
+2021-01-28 20:06:07,295 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Order> com.epam.mentoring.controllers.OrderController.index()
+2021-01-28 20:06:07,295 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.create(com.epam.mentoring.models.Order)
+2021-01-28 20:06:07,296 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}/place],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.createOrder(java.lang.String,com.epam.mentoring.models.Order)
+2021-01-28 20:06:07,298 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.edit(long,com.epam.mentoring.models.Product)
+2021-01-28 20:06:07,298 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/images],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductImage> com.epam.mentoring.controllers.ProductController.viewImages(java.lang.String)
+2021-01-28 20:06:07,299 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/image/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.core.io.Resource> com.epam.mentoring.controllers.ProductController.serveFile(java.lang.String)
+2021-01-28 20:06:07,299 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/uploadimage],methods=[POST]}" onto public java.lang.String com.epam.mentoring.controllers.ProductController.handleFileUpload(java.lang.String,org.springframework.web.multipart.MultipartFile)
+2021-01-28 20:06:07,300 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[GET]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.view(long)
+2021-01-28 20:06:07,300 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Product> com.epam.mentoring.controllers.ProductController.index()
+2021-01-28 20:06:07,301 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.create(com.epam.mentoring.models.Product)
+2021-01-28 20:06:07,303 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2021-01-28 20:06:07,304 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2021-01-28 20:06:07,304 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2021-01-28 20:06:07,307 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-01-28 20:06:07,307 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-28 20:06:07,406 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-01-28 20:06:07,680 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4db60246, org.springframework.security.web.context.SecurityContextPersistenceFilter@67f77f6e, org.springframework.security.web.header.HeaderWriterFilter@6848a051, org.springframework.security.web.authentication.logout.LogoutFilter@48df4071, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@47ac613b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7d70638, com.epam.mentoring.security.TokenAuthenticationFilter@6ea31f82, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7be1ce6a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2ddb3ae8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2152ab30, org.springframework.security.web.session.SessionManagementFilter@5740ff5e, org.springframework.security.web.access.ExceptionTranslationFilter@4d6ccc97, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7c781c42]
+2021-01-28 20:06:07,764 INFO org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:06:02 MSK 2021]; root of context hierarchy
+2021-01-28 20:06:07,808 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:06:07,808 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:06:07,838 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:06:08,082 INFO org.springframework.jmx.export.MBeanExporter [main] Registering beans for JMX exposure on startup
+2021-01-28 20:06:08,108 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [main] Starting beans in phase 2147483647
+2021-01-28 20:06:08,109 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-01-28 20:06:08,126 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-01-28 20:06:08,193 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-01-28 20:06:08,326 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_1
+2021-01-28 20:06:08,341 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_1
+2021-01-28 20:06:08,345 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_1
+2021-01-28 20:06:08,351 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_1
+2021-01-28 20:06:08,382 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_2
+2021-01-28 20:06:08,388 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_2
+2021-01-28 20:06:08,399 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_2
+2021-01-28 20:06:08,424 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_2
+2021-01-28 20:06:08,451 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:06:08,470 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2021-01-28 20:06:08,483 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat started on port(s): 8080 (http)
+2021-01-28 20:06:08,494 INFO org.springframework.boot.StartupInfoLogger [main] Started EcommerceStarterApplication in 6.52 seconds (JVM running for 7.243)
+2021-01-28 20:07:29,498 INFO org.springframework.context.support.AbstractApplicationContext [Thread-4] Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@515c6049: startup date [Thu Jan 28 20:06:02 MSK 2021]; root of context hierarchy
+2021-01-28 20:07:29,501 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [Thread-4] Stopping beans in phase 2147483647
+2021-01-28 20:07:29,503 INFO org.springframework.jmx.export.MBeanExporter [Thread-4] Unregistering JMX-exposed beans on shutdown
+2021-01-28 20:07:29,522 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-4] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:07:38,341 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5: startup date [Thu Jan 28 20:07:38 MSK 2021]; root of context hierarchy
+2021-01-28 20:07:38,650 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-01-28 20:07:38,711 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6d173a79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:07:38,736 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:07:39,146 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:07:39,160 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1522d8a0: startup date [Thu Jan 28 20:07:39 MSK 2021]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5
+2021-01-28 20:07:40,279 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=315ccba1-8b79-34cf-aa02-7691b078abce
+2021-01-28 20:07:40,312 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-01-28 20:07:40,432 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$50fd377c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:07:40,479 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6d173a79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:07:40,752 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:07:40,771 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:07:40,792 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:07:40,792 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:07:40,955 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:07:40,956 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1796 ms
+2021-01-28 20:07:42,541 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executing SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql]
+2021-01-28 20:07:43,360 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executed SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql] in 818 ms.
+2021-01-28 20:07:43,508 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [localhost-startStop-1] Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:07:43,524 INFO org.hibernate.jpa.internal.util.LogHelper [localhost-startStop-1] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-28 20:07:43,587 INFO org.hibernate.Version [localhost-startStop-1] HHH000412: Hibernate Core {5.0.12.Final}
+2021-01-28 20:07:43,589 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000206: hibernate.properties not found
+2021-01-28 20:07:43,591 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000021: Bytecode provider name : javassist
+2021-01-28 20:07:43,627 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [localhost-startStop-1] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2021-01-28 20:07:43,730 INFO org.hibernate.dialect.Dialect [localhost-startStop-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-28 20:07:44,209 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [localhost-startStop-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:07:44,483 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-28 20:07:44,483 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-28 20:07:44,483 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-28 20:07:44,484 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-28 20:07:44,484 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2021-01-28 20:07:44,485 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2021-01-28 20:07:44,485 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-28 20:07:45,315 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.edit(long,com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:07:45,316 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductGroup> com.epam.mentoring.controllers.GroupController.index()
+2021-01-28 20:07:45,317 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group],methods=[POST]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.create(com.epam.mentoring.models.ProductGroup)
+2021-01-28 20:07:45,318 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/group/{id}],methods=[GET]}" onto public com.epam.mentoring.models.ProductGroup com.epam.mentoring.controllers.GroupController.view(long)
+2021-01-28 20:07:45,320 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}/place],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.createOrder(java.lang.String,com.epam.mentoring.models.Order)
+2021-01-28 20:07:45,321 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.edit(long,com.epam.mentoring.models.Order)
+2021-01-28 20:07:45,321 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Order> com.epam.mentoring.controllers.OrderController.index()
+2021-01-28 20:07:45,322 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order],methods=[POST]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.create(com.epam.mentoring.models.Order)
+2021-01-28 20:07:45,322 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/order/{id}]}" onto public com.epam.mentoring.models.Order com.epam.mentoring.controllers.OrderController.view(long)
+2021-01-28 20:07:45,324 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/images],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.ProductImage> com.epam.mentoring.controllers.ProductController.viewImages(java.lang.String)
+2021-01-28 20:07:45,325 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/image/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<org.springframework.core.io.Resource> com.epam.mentoring.controllers.ProductController.serveFile(java.lang.String)
+2021-01-28 20:07:45,326 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}/uploadimage],methods=[POST]}" onto public java.lang.String com.epam.mentoring.controllers.ProductController.handleFileUpload(java.lang.String,org.springframework.web.multipart.MultipartFile)
+2021-01-28 20:07:45,326 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.edit(long,com.epam.mentoring.models.Product)
+2021-01-28 20:07:45,326 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[GET]}" onto public java.util.List<com.epam.mentoring.models.Product> com.epam.mentoring.controllers.ProductController.index()
+2021-01-28 20:07:45,327 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product],methods=[POST]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.create(com.epam.mentoring.models.Product)
+2021-01-28 20:07:45,329 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/product/{id}],methods=[GET]}" onto public com.epam.mentoring.models.Product com.epam.mentoring.controllers.ProductController.view(long)
+2021-01-28 20:07:45,332 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/ui]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2021-01-28 20:07:45,333 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources/configuration/security]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2021-01-28 20:07:45,335 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/swagger-resources]}" onto public org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2021-01-28 20:07:45,339 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2021-01-28 20:07:45,341 INFO org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry [main] Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2021-01-28 20:07:45,519 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping [main] Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2021-01-28 20:07:45,857 INFO org.springframework.security.web.DefaultSecurityFilterChain [main] Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7675c171, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cff3f1d, org.springframework.security.web.header.HeaderWriterFilter@7197b07f, org.springframework.security.web.authentication.logout.LogoutFilter@7cfb0c4c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@44f0ff2b, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3fdcde7a, com.epam.mentoring.security.TokenAuthenticationFilter@11dbcaaf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@33a8c9c9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@521441d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@44e4cb76, org.springframework.security.web.session.SessionManagementFilter@7a65a360, org.springframework.security.web.access.ExceptionTranslationFilter@4b88ca8e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7a83ccd2]
+2021-01-28 20:07:45,901 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2021-01-28 20:07:45,901 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-28 20:07:45,907 WARN com.netflix.config.sources.URLConfigurationSource [main] No URLs will be polled as dynamic configuration sources.
+2021-01-28 20:07:45,907 INFO com.netflix.config.sources.URLConfigurationSource [main] To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2021-01-28 20:07:45,988 INFO org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter [main] Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1522d8a0: startup date [Thu Jan 28 20:07:39 MSK 2021]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5
+2021-01-28 20:07:46,045 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:07:46,045 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:07:46,090 INFO org.springframework.web.servlet.handler.AbstractUrlHandlerMapping [main] Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2021-01-28 20:07:46,720 INFO org.springframework.jmx.export.MBeanExporter [main] Registering beans for JMX exposure on startup
+2021-01-28 20:07:46,731 INFO org.springframework.jmx.export.MBeanExporter [main] Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2021-01-28 20:07:46,731 INFO org.springframework.jmx.export.MBeanExporter [main] Bean with name 'environmentManager' has been autodetected for JMX exposure
+2021-01-28 20:07:46,732 INFO org.springframework.jmx.export.MBeanExporter [main] Bean with name 'refreshScope' has been autodetected for JMX exposure
+2021-01-28 20:07:46,735 INFO org.springframework.jmx.export.MBeanExporter [main] Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2021-01-28 20:07:46,747 INFO org.springframework.jmx.export.MBeanExporter [main] Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2021-01-28 20:07:46,758 INFO org.springframework.jmx.export.MBeanExporter [main] Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=1522d8a0,type=ConfigurationPropertiesRebinder]
+2021-01-28 20:07:46,774 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [main] Starting beans in phase 0
+2021-01-28 20:07:46,791 INFO org.springframework.cloud.netflix.eureka.InstanceInfoFactory [main] Setting initial instance status as: STARTING
+2021-01-28 20:07:46,831 INFO com.netflix.discovery.DiscoveryClient [main] Initializing Eureka in region us-east-1
+2021-01-28 20:07:46,902 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [main] Using JSON encoding codec LegacyJacksonJson
+2021-01-28 20:07:46,902 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [main] Using JSON decoding codec LegacyJacksonJson
+2021-01-28 20:07:47,262 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [main] Using XML encoding codec XStreamXml
+2021-01-28 20:07:47,263 INFO com.netflix.discovery.provider.DiscoveryJerseyProvider [main] Using XML decoding codec XStreamXml
+2021-01-28 20:07:47,462 INFO com.netflix.discovery.shared.resolver.aws.ConfigClusterResolver [main] Resolving eureka endpoints via configuration
+2021-01-28 20:07:47,491 INFO com.netflix.discovery.DiscoveryClient [main] Disable delta property : false
+2021-01-28 20:07:47,492 INFO com.netflix.discovery.DiscoveryClient [main] Single vip registry refresh property : null
+2021-01-28 20:07:47,492 INFO com.netflix.discovery.DiscoveryClient [main] Force full registry fetch : false
+2021-01-28 20:07:47,492 INFO com.netflix.discovery.DiscoveryClient [main] Application is null : false
+2021-01-28 20:07:47,492 INFO com.netflix.discovery.DiscoveryClient [main] Registered Applications size is zero : true
+2021-01-28 20:07:47,493 INFO com.netflix.discovery.DiscoveryClient [main] Application version is -1: true
+2021-01-28 20:07:47,493 INFO com.netflix.discovery.DiscoveryClient [main] Getting all instance registry info from the eureka server
+2021-01-28 20:07:47,662 INFO com.netflix.discovery.DiscoveryClient [main] The response status is 200
+2021-01-28 20:07:47,664 INFO com.netflix.discovery.DiscoveryClient [main] Starting heartbeat executor: renew interval is: 30
+2021-01-28 20:07:47,667 INFO com.netflix.discovery.InstanceInfoReplicator [main] InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-01-28 20:07:47,670 INFO com.netflix.discovery.DiscoveryClient [main] Discovery Client initialized at timestamp 1611853667670 with initial instances count: 2
+2021-01-28 20:07:47,676 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [main] Registering application ecommerce-serivce with eureka with status UP
+2021-01-28 20:07:47,677 INFO com.netflix.discovery.DiscoveryClient$3 [main] Saw local status change event StatusChangeEvent [timestamp=1611853667677, current=UP, previous=STARTING]
+2021-01-28 20:07:47,678 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ECOMMERCE-SERIVCE/eprupetw07c6.petersburg.epam.com:ecommerce-serivce:8080: registering service...
+2021-01-28 20:07:47,679 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [main] Starting beans in phase 2147483647
+2021-01-28 20:07:47,679 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Context refreshed
+2021-01-28 20:07:47,700 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper [main] Found 1 custom documentation plugin(s)
+2021-01-28 20:07:47,715 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ECOMMERCE-SERIVCE/eprupetw07c6.petersburg.epam.com:ecommerce-serivce:8080 - registration status: 204
+2021-01-28 20:07:47,796 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner [main] Scanning for api listing references
+2021-01-28 20:07:47,927 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_1
+2021-01-28 20:07:47,939 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_1
+2021-01-28 20:07:47,944 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_1
+2021-01-28 20:07:47,950 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_1
+2021-01-28 20:07:47,978 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: createUsingPOST_2
+2021-01-28 20:07:47,984 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: editUsingPOST_2
+2021-01-28 20:07:47,995 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: indexUsingGET_2
+2021-01-28 20:07:48,021 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator [main] Generating unique operation named: viewUsingGET_2
+2021-01-28 20:07:48,051 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:07:48,073 INFO org.apache.juli.logging.DirectJDKLog [main] Using a shared selector for servlet write/read
+2021-01-28 20:07:48,086 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat started on port(s): 8080 (http)
+2021-01-28 20:07:48,087 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaAutoServiceRegistration [main] Updating port to 8080
+2021-01-28 20:07:48,097 INFO org.springframework.boot.StartupInfoLogger [main] Started EcommerceStarterApplication in 10.319 seconds (JVM running for 11.083)
+2021-01-28 20:08:43,849 INFO org.springframework.context.support.AbstractApplicationContext [Thread-7] Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1522d8a0: startup date [Thu Jan 28 20:07:39 MSK 2021]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5
+2021-01-28 20:08:43,850 INFO org.springframework.cloud.netflix.eureka.serviceregistry.EurekaServiceRegistry [Thread-7] Unregistering application ecommerce-serivce with eureka with status DOWN
+2021-01-28 20:08:43,851 WARN com.netflix.discovery.DiscoveryClient$3 [Thread-7] Saw local status change event StatusChangeEvent [timestamp=1611853723851, current=DOWN, previous=UP]
+2021-01-28 20:08:43,851 INFO com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ECOMMERCE-SERIVCE/eprupetw07c6.petersburg.epam.com:ecommerce-serivce:8080: registering service...
+2021-01-28 20:08:43,853 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [Thread-7] Stopping beans in phase 2147483647
+2021-01-28 20:08:43,854 INFO org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup [Thread-7] Stopping beans in phase 0
+2021-01-28 20:08:43,857 ERROR com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient [DiscoveryClient-InstanceInfoReplicator-0] Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:89)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:807)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:109)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:89)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 29 common frames omitted
+2021-01-28 20:08:43,857 WARN com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient [DiscoveryClient-InstanceInfoReplicator-0] Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2021-01-28 20:08:43,859 INFO org.springframework.jmx.export.MBeanExporter [Thread-7] Unregistering JMX-exposed beans on shutdown
+2021-01-28 20:08:43,859 INFO org.springframework.jmx.support.MBeanRegistrationSupport [Thread-7] Unregistering JMX-exposed beans
+2021-01-28 20:08:43,860 ERROR com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient [DiscoveryClient-InstanceInfoReplicator-0] Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:807)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:109)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:89)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 common frames omitted
+2021-01-28 20:08:43,861 WARN com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient [DiscoveryClient-InstanceInfoReplicator-0] Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2021-01-28 20:08:43,862 WARN com.netflix.discovery.DiscoveryClient [DiscoveryClient-InstanceInfoReplicator-0] DiscoveryClient_ECOMMERCE-SERIVCE/eprupetw07c6.petersburg.epam.com:ecommerce-serivce:8080 - registration failed Cannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:807)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:109)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:89)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-01-28 20:08:43,862 WARN com.netflix.discovery.InstanceInfoReplicator [DiscoveryClient-InstanceInfoReplicator-0] There was a problem with the instance info replicator
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:807)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:109)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:89)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+2021-01-28 20:08:43,867 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [Thread-7] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:08:43,878 INFO com.netflix.discovery.DiscoveryClient [Thread-7] Shutting down DiscoveryClient ...
+2021-01-28 20:08:43,878 INFO com.netflix.discovery.DiscoveryClient [Thread-7] Unregistering ...
+2021-01-28 20:08:43,881 ERROR com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient [Thread-7] Request execution error
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused (Connection refused)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.delete(WebResource.java:591)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.cancel(AbstractJerseyEurekaHttpClient.java:76)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:119)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:899)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:877)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:325)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:154)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:246)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:399)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:137)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:954)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1034)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1009)
+	at org.springframework.context.support.AbstractApplicationContext$2.run(AbstractApplicationContext.java:929)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:607)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:605)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:440)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 42 common frames omitted
+2021-01-28 20:08:43,882 WARN com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient [Thread-7] Request execution failed with message: java.net.ConnectException: Connection refused (Connection refused)
+2021-01-28 20:08:43,882 ERROR com.netflix.discovery.DiscoveryClient [Thread-7] DiscoveryClient_ECOMMERCE-SERIVCE/eprupetw07c6.petersburg.epam.com:ecommerce-serivce:8080 - de-registration failedCannot execute request on any known server
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:111)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$2.execute(EurekaHttpClientDecorator.java:74)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.cancel(EurekaHttpClientDecorator.java:71)
+	at com.netflix.discovery.DiscoveryClient.unregister(DiscoveryClient.java:899)
+	at com.netflix.discovery.DiscoveryClient.shutdown(DiscoveryClient.java:877)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement.invoke(InitDestroyAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleMetadata.invokeDestroyMethods(InitDestroyAnnotationBeanPostProcessor.java:325)
+	at org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor.postProcessBeforeDestruction(InitDestroyAnnotationBeanPostProcessor.java:154)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.run(DisposableBeanAdapter.java:246)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.destroy(GenericScope.java:399)
+	at org.springframework.cloud.context.scope.GenericScope.destroy(GenericScope.java:137)
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:272)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:583)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:555)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:954)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:516)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1034)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1009)
+	at org.springframework.context.support.AbstractApplicationContext$2.run(AbstractApplicationContext.java:929)
+2021-01-28 20:08:43,895 INFO com.netflix.discovery.DiscoveryClient [Thread-7] Completed shut down of DiscoveryClient
+2021-01-28 20:09:05,321 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5: startup date [Thu Jan 28 20:09:05 MSK 2021]; root of context hierarchy
+2021-01-28 20:09:05,697 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-01-28 20:09:05,702 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 5.3.6.Final
+2021-01-28 20:09:05,752 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6d173a79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:09:06,076 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+2021-01-28 20:09:06,089 INFO org.springframework.context.support.AbstractApplicationContext [main] Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@765f05af: startup date [Thu Jan 28 20:09:06 MSK 2021]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@1e66f1f5
+2021-01-28 20:09:06,993 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=315ccba1-8b79-34cf-aa02-7691b078abce
+2021-01-28 20:09:07,016 INFO org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor [main] JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2021-01-28 20:09:07,112 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$50fd377c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:09:07,149 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$6d173a79] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2021-01-28 20:09:07,336 INFO org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainer [main] Tomcat initialized with port(s): 8080 (http)
+2021-01-28 20:09:07,351 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-28 20:09:07,363 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2021-01-28 20:09:07,364 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet Engine: Apache Tomcat/8.5.43
+2021-01-28 20:09:07,478 INFO org.apache.juli.logging.DirectJDKLog [localhost-startStop-1] Initializing Spring embedded WebApplicationContext
+2021-01-28 20:09:07,479 INFO org.springframework.boot.context.embedded.EmbeddedWebApplicationContext [localhost-startStop-1] Root WebApplicationContext: initialization completed in 1390 ms
+2021-01-28 20:09:08,534 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executing SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql]
+2021-01-28 20:09:09,262 INFO org.springframework.jdbc.datasource.init.ScriptUtils [localhost-startStop-1] Executed SQL script from URL [file:/Users/ivan_chuvakhin/Documents/epam/study/monoToMicro/target/classes/schema.sql] in 727 ms.
+2021-01-28 20:09:09,376 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [localhost-startStop-1] Building JPA container EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:09:09,395 INFO org.hibernate.jpa.internal.util.LogHelper [localhost-startStop-1] HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2021-01-28 20:09:09,466 INFO org.hibernate.Version [localhost-startStop-1] HHH000412: Hibernate Core {5.0.12.Final}
+2021-01-28 20:09:09,468 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000206: hibernate.properties not found
+2021-01-28 20:09:09,469 INFO org.hibernate.cfg.Environment [localhost-startStop-1] HHH000021: Bytecode provider name : javassist
+2021-01-28 20:09:09,503 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [localhost-startStop-1] HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2021-01-28 20:09:09,599 INFO org.hibernate.dialect.Dialect [localhost-startStop-1] HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2021-01-28 20:09:10,031 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [localhost-startStop-1] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:09:10,293 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'characterEncodingFilter' to: [/*]
+2021-01-28 20:09:10,293 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2021-01-28 20:09:10,294 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2021-01-28 20:09:10,294 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'requestContextFilter' to: [/*]
+2021-01-28 20:09:10,295 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'springSecurityFilterChain' to: [/*]
+2021-01-28 20:09:10,295 INFO org.springframework.boot.web.servlet.AbstractFilterRegistrationBean [localhost-startStop-1] Mapping filter: 'jwtAuthenticationTokenFilter' to: [/*]
+2021-01-28 20:09:10,295 INFO org.springframework.boot.web.servlet.ServletRegistrationBean [localhost-startStop-1] Mapping servlet: 'dispatcherServlet' to [/]
+2021-01-28 20:09:10,609 WARN org.springframework.context.support.AbstractApplicationContext [main] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupController': Unsatisfied dependency expressed through field 'ecommerceService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ecommerceService': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'cart.service.endpoints' in value "#{'${cart.service.endpoints}'.split(',')}"
+2021-01-28 20:09:10,610 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-01-28 20:09:10,618 INFO org.apache.juli.logging.DirectJDKLog [main] Stopping service [Tomcat]
+2021-01-28 20:09:10,635 INFO org.springframework.boot.autoconfigure.logging.AutoConfigurationReportLoggingInitializer [main] 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2021-01-28 20:09:10,639 ERROR org.springframework.boot.SpringApplication [main] Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'groupController': Unsatisfied dependency expressed through field 'ecommerceService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ecommerceService': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'cart.service.endpoints' in value "#{'${cart.service.endpoints}'.split(',')}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:586)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:756)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:123)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:666)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:300)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1082)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1071)
+	at com.epam.mentoring.EcommerceStarterApplication.main(EcommerceStarterApplication.java:24)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'ecommerceService': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'cart.service.endpoints' in value "#{'${cart.service.endpoints}'.split(',')}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:370)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1268)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:551)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:481)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:312)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:308)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:211)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1131)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'cart.service.endpoints' in value "#{'${cart.service.endpoints}'.split(',')}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:174)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer$2.resolveStringValue(PropertySourcesPlaceholderConfigurer.java:172)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:846)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1079)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1059)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:583)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:87)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:364)
+	... 30 common frames omitted
